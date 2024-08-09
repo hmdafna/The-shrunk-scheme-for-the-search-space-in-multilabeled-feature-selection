@@ -33,8 +33,6 @@ Before running the project, some changes need to be made to the internal functio
 - `nsga2.py`
 - `non_dominated_sorting.py`
 - `mlknn.py`
-- `numpy_vjps.py`
-- `numpy_jvps.py`
   
 ### Step 2: Reading Files
 First, download the required datasets from [MLL Resources](https://www.uco.es/kdis/mllresources/). Use the functions in the `Reading_Files.ipynb` module to load the datasets.
