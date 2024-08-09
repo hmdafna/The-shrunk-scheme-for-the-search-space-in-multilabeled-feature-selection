@@ -7,7 +7,7 @@ This repository contains the code and resources for a research project exploring
 ## Repository Contents
 
 ### 1. Reading Files
-This module contains various functions for reading commonly used multi-labeled datasets. It provides the necessary utilities to load and preprocess data for subsequent analysis.
+This module contains various functions for reading commonly used multi-labeled datasets. To use this, you need to download the datasets from [MLL Resources](https://www.uco.es/kdis/mllresources/).
 
 ### 2. Phase 1: Based on Ranks
 This script calculates a MIC (Maximal Information Coefficient) matrix to evaluate the relevance of each feature. Non-dominated sorting is then applied to this matrix, modified to maximize the sorting function to identify the dominated features. This technique organizes the features into different ranks or fronts, with those in rank 0 (the dominating features) selected for the next phase.
@@ -21,8 +21,53 @@ This file contains the core components of the algorithm. It trains the MLKNN mod
 ### 5. Reading Results
 This script reads pickle files containing the results of the feature selection process. These results can be manually added to a CSV file for easier analysis and interpretation.
 
-### 6. The Wilcoxon Rank-Sum Test (`The_Wilcoxon_Rank_Sum_Test.ipynb`)
+### 6. The Wilcoxon Rank-Sum Test 
 This Jupyter notebook performs statistical tests using the Wilcoxon rank-sum test to determine whether differences in metric values (objectives) between filtered and unfiltered datasets are statistically significant. It also includes functions to calculate averages, plot relationships between features and metrics, and provide detailed output on each metric's performance. The input data is expected in the form of a CSV file.
+
+## Running the Project
+
+### Step 1: Modifying Internal Functions
+
+Before running the project, some changes need to be made to the internal functions. The modified files are included in this repository:
+
+- `nsga2.py`
+- `non_dominated_sorting.py`
+- `mlknn.py`
+- `numpy_vjps.py`
+- `numpy_jvps.py`
+  
+### Step 2: Reading Files
+First, download the required datasets from [MLL Resources](https://www.uco.es/kdis/mllresources/). Use the functions in the `Reading_Files.ipynb` module to load the datasets.
+
+### Step 3: Phase 1 - Feature Selection
+Select the correct function for the dataset from the `Reading_Files.ipynb` module and use it to calculate the MIC matrix and apply non-dominated sorting using the 'Initial filtering (based_on_crowding_distance).ipynb' module or the 'Initial filtering (based_on_ranks).ipynb' module. This will output the indices of the selected features, which are saved as a file (they can be manually entered as a list for the next phase as well).
+
+### Step 4: Running the Main Algorithm
+To run the main algorithm, you need the feature indices from Phase 1. The algorithm has the following standard variables:
+
+```python
+pop_size=100,
+sampling=BinaryRandomSampling(total_features),
+crossover=BinaryUniformCrossover(prob=0.9),
+mutation=BinaryBitflipMutation(prob=0.01),
+eliminate_duplicates=True
+```
+These variables can be modified if desired.
+
+### Running the Main Algorithm
+
+To run the main algorithm from the terminal, use the following command:
+
+```bash
+python main_algorithm.py
+```
+### Step 5: Reading Results
+
+After running the main algorithm, use the `Reading_Results.ipynb` script to open and read the pickle files containing the results. You can manually add these results to a CSV file for easier analysis and interpretation.
+
+### Step 6: Statistical Analysis
+
+Finally, use the `The_Wilcoxon_Rank_Sum_Test.ipynb` notebook to perform statistical tests on the results. This notebook expects input in the form of CSV files, which should be manually prepared from the results of multiple runs.
 
 ## Dependencies
 
@@ -36,7 +81,7 @@ This project relies on several key Python libraries, including but not limited t
 - **scipy**: For statistical tests and calculations.
 - **skmultilearn**: For multi-label learning models like MLKNN.
 
-Ensure you have these libraries installed before running the scripts.
+Ensure you have these libraries installed before running the scripts. A 'pip install' command is included in all notebooks requiring external libraries. 
 
 ## Author
 
