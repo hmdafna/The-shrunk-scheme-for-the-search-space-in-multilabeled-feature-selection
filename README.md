@@ -83,9 +83,9 @@ Ensure you have these libraries installed before running the scripts. A 'pip ins
 
 ## Author
 
-This project was developed by **Dafna Matsegora** ([khri5530@mylaurier.ca](mailto:khri5530@mylaurier.ca)) with guidance from my supervisor, **Azam Asilian Bidgoli**.
+This project was developed by **Dafna Matsegora** ([khri5530@mylaurier.ca](mailto:khri5530@mylaurier.ca)) with guidance from my supervisor, **Dr. Azam Asilian Bidgoli**.
 
 ## Acknowledgments
 
-This work is part of a research project investigating the effectiveness of a 2-phase scheme for feature selection in multi-labeled datasets. The project explores whether an initial filtration phase, followed by a genetic algorithm, offers better results than using the genetic algorithm alone.
+This work is part of a research project exploring the effectiveness of a two-phase approach to feature selection in multi-labeled datasets. The study examines whether combining an initial filtration phase with a genetic algorithm yields superior results compared to using the genetic algorithm alone. Portions of the code were adapted from the work of Mahdis Rahmani [mahdsrahmani@gmail.com], whose implementation of the NSGA-2 algorithm for feature selection provided a valuable foundation for this research. Her full code can be found [here](https://github.com/mahdis-repo/NSGA-2-for-Feature-Selection/blob/main/NSGA-2%20On%20Mnist%20.ipynb). 
 
