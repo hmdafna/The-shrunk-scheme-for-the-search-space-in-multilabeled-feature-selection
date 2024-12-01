@@ -83,7 +83,7 @@ Ensure you have these libraries installed before running the scripts. A 'pip ins
 
 ## Author
 
-This project was developed by **Dafna Matsegora** ([khri5530@mylaurier.ca](mailto:khri5530@mylaurier.ca)) with guidance from my supervisor, **Dr. Azam Asilian Bidgoli**.
+This project was developed by **Dafna Matsegora** ([khri5530@mylaurier.ca](mailto:khri5530@mylaurier.ca)) with guidance from my supervisor, **Dr. Azam Asilian**.
 
 ## Acknowledgments
 
